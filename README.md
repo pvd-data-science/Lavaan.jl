@@ -1,5 +1,5 @@
-# sem.jl 
-A Julia Package for Structural Equation Modeling
+# Lavaan.jl 
+A Julia Package for Structural Equation Modeling inspired by the R package of the same name.
 
 ## Summary
 The goal of this project will be to develop a software package in Julia that performs structural equation modeling. This is a species of statistical modeling approach that combines ideas from regression modeling and factor analysis. This approach is hugely popular in social sciences (e.g., psychology, political science, economics) where researchers are required to measure so-called latent variables.
