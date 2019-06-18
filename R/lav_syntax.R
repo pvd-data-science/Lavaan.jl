@@ -37,7 +37,10 @@ lavParseModelString <- function(model.syntax = '', as.data.frame. = FALSE,
                    ":", "\\|", "%")
     lhs.modifiers <- c("efa")
     operators.extra <- c(operators, lhs.modifiers)
-    start.idx <- grep(paste(operators.extra, collapse = "|"), model.simple)
+
+    ## NOTE: this creates a vector of int that indicates which elements of 
+    ## the vector `model.simple` contain any operator from `operator.extra`
+    start.idx <- grep(paste(operators.extra, collapse = "|"), model.simple) 
 
     # check for empty start.idx: no operator found (new in 0.6-1)
     if (length(start.idx) == 0L) {
