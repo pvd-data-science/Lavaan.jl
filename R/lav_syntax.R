@@ -1,8 +1,10 @@
 # parse lavaan syntax
 # YR 14 Jan 2014: move to lav_syntax.R
 
-lavParseModelString <- function(model.syntax = '', as.data.frame. = FALSE,
-                                warn = TRUE, debug = FALSE) {
+lavParseModelString <- function(model.syntax = '', 
+                                as.data.frame. = FALSE,
+                                warn = TRUE, 
+                                debug = FALSE) {
 
     # check for empty syntax
     if (length(model.syntax) == 0) {

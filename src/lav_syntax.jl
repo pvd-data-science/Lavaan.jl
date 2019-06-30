@@ -45,6 +45,7 @@ function lav_parse_model_string(model_syntax::String)
     lhs_modifiers = ["efa"]
     operators_extra = vcat(operators, lhs_modifiers)
 
+    # start_idx = Regex(join(operators_extra, "|"))
     model
 end 
 
