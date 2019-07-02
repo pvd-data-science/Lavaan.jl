@@ -17,6 +17,16 @@ struct ParsedModel
 end  
 
 
+function find_operators(models::Array{String,1}, ops::Regex)
+    n_models = length(models)
+    has_operand = falses(n_models)
+    for i = 1:n_models
+        has_operand[i] = true
+    end 
+    findall(has_operand)
+end 
+
+
 function lav_parse_model_string(model_syntax::String)
     # Remove comments up to newline, and keep newline
     model_syntax = replace(model_syntax, r"[#!].*(?=\n)" => "")
@@ -39,7 +49,7 @@ function lav_parse_model_string(model_syntax::String)
     # but before we do that, we remove all strings between double quotes
     # to avoid confusion with for example equal("f1=~x1") statements
     # model.simple <- gsub("\\(.*\\)\\*", "MODIFIER*", model)
-    model_simple <- replace(model, r"\\\".[^\\\"]*\\\"" => "LABEL")
+    model_simple = replace(model, r"\\\".[^\\\"]*\\\"" => "LABEL")
 
     operators = ["=~", "<~", "~*~", "~~", "~", "==", "<", ">", ":=", ":", "\\|", "%"]
     lhs_modifiers = ["efa"]
